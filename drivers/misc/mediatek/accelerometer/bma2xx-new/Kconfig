@@ -1,0 +1,4 @@
+
+config MTK_BMA2XX_ACC_NEW
+	bool "BMA253_new_acc for MediaTek package"
+	default n

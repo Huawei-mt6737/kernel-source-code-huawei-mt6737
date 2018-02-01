@@ -1,0 +1,17 @@
+config MTK_IMGSENSOR
+  bool CONFIG_MTK_IMGSENSOR
+  default n
+  help
+    CONFIG_MTK_IMGSENSOR
+
+config MTK_EFUSE_DOWNGRADE
+  bool "CONFIG_MTK_EFUSE_DOWNGRADE"
+  default n
+  help
+    CONFIG_MTK_EFUSE_DOWNGRADE
+
+config MAYA_L22
+  bool "CONFIG_MAYA_L22"
+  default n
+  help
+    CONFIG_MAYA_L22

@@ -1,0 +1,18 @@
+menuconfig NXP_NFC
+	tristate "NFC drivers"
+	default n
+	---help---
+	  Say Y here for supporting NFC.
+	  Say Y here for supporting NFC.
+	  Say Y here for supporting NFC.
+
+if NXP_NFC
+
+
+config NFC_PN548
+	tristate "PN548 NFC driver"
+	default n
+	help
+	  Y means NFC_PN548 wil use. If you are not sure about this, set n.
+
+endif 

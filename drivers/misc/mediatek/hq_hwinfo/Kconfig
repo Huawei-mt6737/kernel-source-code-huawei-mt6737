@@ -1,0 +1,6 @@
+config HQ_HWINFO
+	bool "HQ Hardware Infomation"
+	default n
+	help
+	  HQ HardWare Infomation
+
