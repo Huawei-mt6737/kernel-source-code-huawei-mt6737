@@ -1,0 +1,31 @@
+language: c
+#######################################################################################
+os:
+  - linux
+  
+addons:
+  apt:
+    packages:
+      - curl
+
+#######################################################################################
+
+
+before_install:
+  - sudo apt-get update -qq
+  
+  - git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 ~/toolchain/
+
+  - mkdir tools/tools
+#######################################################################################
+
+
+script:  
+  - export CROSS_COMPILE=~/toolchain/bin/aarch64-linux-android-
+  - export KBUILD_BUILD_USER="yashpaljoshi"
+  - export KBUILD_BUILD_HOST="Shivom"
+  - make ARCH=arm64 l22_defconfig O=out/
+  - make ARCH=arm64 Image.gz-dtb O=out/
+
+after_success:
+  - curl --upload-file out/arch/arm64/boot/Image.gz-dtb https://transfer.sh/myaL22_kernel
